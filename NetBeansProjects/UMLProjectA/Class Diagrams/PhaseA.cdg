@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PhaseA">
+  <ClassDiagramComponents>
+    <Class name="Player" package="" visibility="public" xPosition="17.0" yPosition="9.0">
+      <Fields>
+        <Field name="money" type="int" visibility="private"/>
+        <Field name="loan" type="int" visibility="private"/>
+        <Field name="bills" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Dice" package="" visibility="public" xPosition="7.0" yPosition="354.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="rollDice" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Board" package="" visibility="public" xPosition="17.0" yPosition="194.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="dealCard" package="" visibility="public" isAbstract="true" xPosition="574.0" yPosition="209.0">
+      <Fields>
+        <Field name="message" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getMessage" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Card" package="" visibility="public" xPosition="506.0" yPosition="9.0">
+      <Methods>
+        <Method name="getMessage" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="messageCard" package="" visibility="public" isAbstract="true" xPosition="404.0" yPosition="209.0">
+      <Fields>
+        <Field name="message" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getMessage" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Stack" package="" visibility="public" xPosition="226.0" yPosition="9.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Stack" returnType="String" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+        <Method name="top" returnType="Card" visibility="public"/>
+        <Method name="isEmpty" returnType="boolean" visibility="public"/>
+        <Method name="refillStack" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="dealCard" target="Card"/>
+    <HasRelation name="stack" source="Stack" target="Card" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="messageCard" target="Card"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
